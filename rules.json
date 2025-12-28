@@ -1,0 +1,241 @@
+{
+  "settings": {
+    "replyModeDefault": "reply",
+    "ignoreBots": true,
+    "ignoreDMs": true,
+    "ignorePrefixes": [],
+    "defaultCooldownMs": 800,
+    "maxMessageLength": 4000,
+    "logMatches": true
+  },
+  "rules": [
+    {
+      "id": "test_bot_ga",
+      "enabled": true,
+      "match": "wildcard",
+      "triggers": ["*bot gà*", "*bot ga*"],
+      "caseInsensitive": true,
+      "cooldownMs": 0,
+      "per": "user",
+      "where": {},
+      "action": {
+        "mode": "reply",
+        "mentionAuthor": true,
+        "allowedMentions": { "users": true, "roles": false, "everyone": false },
+        "deleteTriggerMessage": false,
+        "replies": ["Ok thôi bạn là nhất, bạn là số 1 {mention} 😤"]
+      }
+    },
+
+    {
+      "id": "quick_comebacks",
+      "enabled": true,
+      "caseInsensitive": true,
+      "cooldownMs": 600,
+      "per": "user",
+      "where": {},
+      "action": {
+        "mode": "reply",
+        "mentionAuthor": true,
+        "allowedMentions": { "users": true, "roles": false, "everyone": false },
+        "deleteTriggerMessage": false
+      },
+      "entries": [
+        {
+          "match": "exact",
+          "triggers": ["?"],
+          "replies": [
+            "? {mention}",
+            "? cái loz {mention}",
+            "? con cak {mention} "
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["vcl", "vl", "vãi", "vai"],
+          "replies": [
+            "Vãi được cả lon cũng hay {mention} 😌",
+            "mày có L à {mention}",
+            "Chill chill {mention}, bình tĩnh nào cô pé",
+            "🍊 down bờ rô {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["wtf", "what the", "đm", "dmm", "dm"],
+          "replies": [
+            "Ấy ấy nhẹ lời nha {mention}",
+            "Ê đừng nóng {mention}, nói chuyện lịch sự tí",
+            "🍊 down bờ rô {mention} 😅",
+            "Nói bậy ít thôi {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": [
+            "như cc",
+            "nhu cc",
+            "như c*c",
+            "cc",
+            "con cak",
+            "cặc",
+            "con cặc"
+          ],
+          "replies": [
+            "Mới nói có tí đã rút súng ra vậy {mention}",
+            "Làm như cc mày to lắm mà khoe {mention} 🫠",
+            "Đâu lấy ra t xem {mention}",
+            "Eo lại lôi cậu bé ra 🫣 {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["ngu", "gà", "noob", "bot ngu"],
+          "replies": [
+            "Chắc m khôn hơn t {mention}",
+            "Tí ra cổng trường gặp t {mention}",
+            "Nín nào cô pé chưa tài đâu {mention}",
+            "T không ngu, {mention} không ngu. Vậy ai ngu? -> Thằng Đạt 👌",
+            "Tao là bot không phải gà 🤓👆"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["cook"],
+          "replies": [
+            "Từ khi nào từ tiếng anh lại dùng như tiếng việt thế này {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["alo", "ALO", "lo", "lô"],
+          "replies": [
+            "Lô con cặc tao này {mention}",
+            "Lô cái đầu buồi {mention}",
+            "Lô cái bìu"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["sv", "SV", "súc vật"],
+          "replies": [
+            "Nhìn lại bản thân mình coi {mention}",
+            "Chắc gì m đã hơn sv {mention}",
+            "Thằng sv duy nhất ở đây là m {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["buồn", "sad", ":("],
+          "replies": [
+            "Buồn cái dái tao {mention}",
+            "Đừng buồn nữa {mention}",
+            "Ai là người làm em buồn nói với tôi, tôi cho người đó biến mất (BOT TỔNG TÀI) {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["bot", "ALO", "lo", "lô"],
+          "replies": [
+            "Cái L gì cũng t ? {mention}",
+            "Nói thế thì chịu rồi {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["ga'"],
+          "replies": [
+            "Bro thực sự nghĩ rằng viết không dấu là tao không hiểu {mention}"
+          ]
+        },
+        {
+          "match": "exact",
+          "triggers": ["🤓👆"],
+          "replies": ["🗣️🤌 {mention}"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["He", "he", "hehe"],
+          "replies": ["He ?", "He cc {mention},"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["demon1", "dm1", "pịa1"],
+          "replies": [
+            "Linh vật server, kẻ hết thời mạnh nhất, một thời để nhớ."
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["primi", "primmie"],
+          "replies": ["Chưa tài đâu khi nào vô địch thì tính tiếp nhé"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["kiddo", "kid", "kíd", "con nít", "kit"],
+          "replies": [
+            "M lớn hơn ai mà sủa {mention} 😒",
+            "Làm như mình lớn lắm ấy {mention}"
+          ]
+        },
+        {
+          "match": "exact",
+          "triggers": ["vali", "valo", "valorant"],
+          "replies": [
+            "Bắt được thằng nghiện {mention}",
+            "Suốt ngày vali không chán à {mention}",
+            "Bỏ cái game rẻ rách ấy đi mất tình ae đấy {mention}",
+            "Bắn có hay đâu sao suốt ngày rủ thế {mention}",
+            "Bắn như cc mà cứ rủ {mention}",
+            "Nghiện vl {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["niga", "nigga", "nigger"],
+          "replies": [
+            "Thích rây cít không {mention}",
+            "Racist jokes không làm m ngầu hơn đâu {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["gem"],
+          "replies": ["Nghiện vl {mention}"]
+        },
+        {
+          "match": "exact",
+          "triggers": ["ae"],
+          "replies": [
+            "Deo ai ae với m {mention}",
+            "ae con cak tình nghĩa xaoloz {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["hj chat", "hj", "hi"],
+          "replies": [
+            "Hi {mention}",
+            "Hi con cack tao {mention}",
+            "Hi kiddo {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["bai", "bye", "pai", "paii"],
+          "replies": ["Ok {mention}", "👍", "Seen"]
+        }, 
+                        {
+          "match": "contains",
+          "triggers": ["dcm", "địt", "mẹ"],
+          "replies": [
+              "Nói bậy ít thôi {mention}",
+              "Tưởng văng tục ra là ngầu à {mention}",
+              "T chụp lại rồi tí t gửi mẹ m {mention}",
+              "Láo ? {mention}"
+          ]
+        }
+      ]
+    }
+  ]
+}
