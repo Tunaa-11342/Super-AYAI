@@ -419,6 +419,31 @@ client.on("messageCreate", async (message) => {
   }
 });
 
+// Create HTTP server for Render health check
+const http = require("http");
+const PORT = process.env.PORT || 3000;
+
+const server = http.createServer((req, res) => {
+  if (req.url === "/health") {
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(
+      JSON.stringify({
+        status: "ok",
+        uptime: process.uptime(),
+        bot: client.user?.tag || "not ready",
+        guilds: client.guilds.cache.size,
+      })
+    );
+  } else {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Discord Bot is running!");
+  }
+});
+
+server.listen(PORT, () => {
+  console.log(`[HTTP] Server listening on port ${PORT}`);
+});
+
 // Login with timeout
 const loginTimeout = setTimeout(() => {
   console.error("[TIMEOUT] Failed to login within 30 seconds");
