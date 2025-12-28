@@ -1,5 +1,3 @@
-const os = require("os");
-console.log("[boot-start]", { pid: process.pid, host: os.hostname() });
 require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
@@ -172,6 +170,7 @@ function wildcardToRegex(pattern, caseInsensitive) {
   const final = hasStar ? `^${escaped}$` : `^${escapeRegex(pattern)}$`;
   return new RegExp(final, caseInsensitive ? "i" : "");
 }
+console.log("[boot]", { pid: process.pid, user: client.user?.tag });
 
 function buildMatcher(rule) {
   const flags = rule.caseInsensitive ? "i" : "";
@@ -296,11 +295,18 @@ const client = new Client({
 
 client.once("ready", () => {
   console.log(`Logged in as ${client.user.tag}`);
-  console.log("[boot-ready]", { pid: process.pid, host: os.hostname() });
-  console.log("[boot]", { pid: process.pid, hostname: require("os").hostname() });
+  console.log(`[READY] Process ID: ${process.pid}`);
+  console.log(`[READY] In ${client.guilds.cache.size} guilds`);
 });
 
 client.on("messageCreate", async (message) => {
+  if (message.author.id === client.user.id) return;
+  console.log(
+    `[MESSAGE] From ${message.author.tag}: "${message.content.substring(
+      0,
+      50
+    )}"`
+  );
   const { settings, rules } = CONFIG;
 
   if (settings.ignoreBots && message.author.bot) return;
@@ -369,7 +375,6 @@ client.on("messageCreate", async (message) => {
     });
 
     try {
-      console.log("[send_attempt]", { pid: process.pid, host: os.hostname(), mid: message.id });
       if (rule.action.mode === "send") {
         await message.channel.send({ content: text, allowedMentions });
       } else {
@@ -392,5 +397,3 @@ client.on("messageCreate", async (message) => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
-
-
