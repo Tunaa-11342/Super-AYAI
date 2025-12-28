@@ -238,8 +238,97 @@
             "T chụp lại rồi tí t gửi mẹ m {mention}",
             "Láo ? {mention}"
           ]
+        },
+                {
+          "match": "contains",
+          "triggers": ["Tuấn ngu"],
+          "replies": ["Tuấn không ngu, {mention} ngu 🤪"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["domixi", "bo pc", "mixi", "do mixi"],
+          "replies": [
+            "Con cho cao bang bo pc 🐕💻",
+            "Alo {mention} à, ờ anh chào {mention} nhé. Em là {mention} à {mention}, ơi dồi ôi em ơi chối làm sao được hả {mention}! Anh nói thật đấy, {mention} mà không nói chuyện nghiêm túc với anh là anh đăng hết thông tin của {mention} lên mạng đấy",
+            "Sẽ có những có cá phải giả chó {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["fact"],
+          "replies": ["Tin chuẩn không anh {mention} 😒"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["36", "Thanh Hóa", "ThanhHoa", "Hoa Thánh"],
+          "replies": ["Ae 36 mãi đỉnh mãi đỉnh {mention}"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["slip", "ngủ", "zzz", "sleep"],
+          "replies": ["Cút"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["gigi"],
+          "replies": ["gigi cái đb {mention}"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["gg"],
+          "replies": ["Deo gg đấy làm sao {mention}"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["Sóc lọ", "sục", "lọ"],
+          "replies": [
+            "Bắt sóc bỏ lọ nữa hả {mention}",
+            "Hại sức khỏe lắm {mention}",
+            "Bớt đi hại sức khỏe lắm {mention}",
+            "M tính road to thận yếu hả {mention} ngày nào cũng lọ"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["wibi, wibu"],
+          "replies": ["🎵 Và hãy luôn tự hào vì bạn là... Một..Thằng..Wibu🎵"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["Gensin", "Gensin"],
+          "replies": ["Sao cứ nhắc tới cái game đáy xã hội thế {mention}"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["con trai"],
+          "replies": [
+            "Làm con trai không khó, làm con trai gốc mới khó {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["ỉa"],
+          "replies": [
+            "Buồn ỉa thì phải xả thôi {mention}",
+            "Có cần t xì rặn ỉa không {mention}"
+          ]
+        },
+        {
+          "match": "contains",
+          "triggers": ["HDPE là gì"],
+          "replies": [
+            "HDPE là ngon luôn, m ở thời kì khủng long về à {mention}"
+          ]
+        },
+                {
+          "match": "contains",
+          "triggers": ["How old are you"],
+          "replies": [
+            "Old enough to be ur mother {mention}"
+          ]
         }
       ]
     }
   ]
 }
+
