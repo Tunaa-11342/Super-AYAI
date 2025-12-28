@@ -293,21 +293,15 @@ const client = new Client({
 });
 
 client.once("ready", () => {
-  console.log(`Logged in as ${client.user.tag}`);
+  console.log(`[READY] Logged in as ${client.user.tag}`);
   console.log(`[READY] Process ID: ${process.pid}`);
-  console.log(`[READY] In ${client.guilds.cache.size} guilds`);
+  console.log(`[READY] In ${client.guilds.cache.size} guild(s)`);
 });
 
 client.on("messageCreate", async (message) => {
-  if (message.author.id === client.user.id) return;
-  console.log(
-    `[MESSAGE] From ${message.author.tag}: "${message.content.substring(
-      0,
-      50
-    )}"`
-  );
   const { settings, rules } = CONFIG;
 
+  // ✅ CHECK NÀY PHẢI Ở ĐẦU TIÊN - trước tất cả logic khác
   if (settings.ignoreBots && message.author.bot) return;
   if (settings.ignoreDMs && !message.guild) return;
 
@@ -345,8 +339,6 @@ client.on("messageCreate", async (message) => {
       if (rule.action.mode === "send" || rule.action.mode === "reply") {
         if (!perms?.has(PermissionFlagsBits.SendMessages)) return;
       }
-      if (rule.action.mode === "reply") {
-      }
     }
 
     const chosen = pickReply(rule.action.replies);
@@ -367,11 +359,14 @@ client.on("messageCreate", async (message) => {
     if (rule.action.allowedMentions.users)
       allowedMentions.users.push(message.author.id);
 
-    console.log("[send_attempt]", {
-      pid: process.pid,
-      rule: rule.id,
-      msg: message.id,
-    });
+    // ✅ Chỉ log khi thực sự gửi message
+    if (settings.logMatches) {
+      console.log("[send_attempt]", {
+        pid: process.pid,
+        rule: rule.id,
+        msg: message.id,
+      });
+    }
 
     try {
       if (rule.action.mode === "send") {
@@ -396,4 +391,3 @@ client.on("messageCreate", async (message) => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
-
