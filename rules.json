@@ -87,13 +87,20 @@
         },
         {
           "match": "contains",
-          "triggers": ["ngu", "gà", "noob", "bot ngu"],
+          "triggers": ["ngu", "noob", "bot ngu"],
           "replies": [
             "Chắc m khôn hơn t {mention}",
             "Tí ra cổng trường gặp t {mention}",
             "Nín nào cô pé chưa tài đâu {mention}",
-            "T không ngu, {mention} không ngu. Vậy ai ngu? -> Thằng Đạt 👌",
-            "Tao là bot không phải gà 🤓👆"
+            "T không ngu, {mention} không ngu. Vậy ai ngu? -> Thằng Đạt 👌"
+          ]
+        },
+                {
+          "match": "contains",
+          "triggers": ["bot gà"],
+          "replies": [
+            "Tao là bot không phải gà 🤓👆 {mention}",
+            "gà cmm 😡 {mention}"
           ]
         },
         {
@@ -153,7 +160,7 @@
         {
           "match": "contains",
           "triggers": ["He", "he", "hehe"],
-          "replies": ["He ?", "He cc {mention},"]
+          "replies": ["He ?", "He cc {mention}"]
         },
         {
           "match": "contains",
