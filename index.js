@@ -170,6 +170,7 @@ function wildcardToRegex(pattern, caseInsensitive) {
   const final = hasStar ? `^${escaped}$` : `^${escapeRegex(pattern)}$`;
   return new RegExp(final, caseInsensitive ? "i" : "");
 }
+console.log("[boot]", { pid: process.pid, user: client.user?.tag });
 
 function buildMatcher(rule) {
   const flags = rule.caseInsensitive ? "i" : "";
@@ -358,7 +359,12 @@ client.on("messageCreate", async (message) => {
     if (rule.action.allowedMentions.users)
       allowedMentions.users.push(message.author.id);
 
-    // send
+    console.log("[send_attempt]", {
+      pid: process.pid,
+      rule: rule.id,
+      msg: message.id,
+    });
+
     try {
       if (rule.action.mode === "send") {
         await message.channel.send({ content: text, allowedMentions });
@@ -377,10 +383,8 @@ client.on("messageCreate", async (message) => {
       if (settings.logMatches) console.error("[send failed]", e.message);
     }
 
-    break; 
+    break;
   }
 });
 
 client.login(process.env.DISCORD_TOKEN);
-
-
