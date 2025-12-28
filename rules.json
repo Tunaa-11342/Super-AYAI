@@ -71,15 +71,12 @@
           ]
         },
         {
-          "match": "contains",
+          "match": "regex",
           "triggers": [
-            "như cc",
-            "nhu cc",
-            "như c*c",
-            "cc",
-            "con cak",
-            "cặc",
-            "con cặc"
+            "như\\s*cc",
+            "\\bcon\\s*cak\\b",
+            "\\bcặc\\b",
+            "\\bcon\\s*cặc\\b"
           ],
           "replies": [
             "Mới nói có tí đã rút súng ra vậy {mention}",
@@ -107,8 +104,8 @@
           ]
         },
         {
-          "match": "contains",
-          "triggers": ["alo", "ALO", "lo", "lô"],
+          "match": "regex",
+          "triggers": ["\\balo\\b", "\\blô\\b"],
           "replies": [
             "Lô con cặc tao này {mention}",
             "Lô cái đầu buồi {mention}",
@@ -135,7 +132,7 @@
         },
         {
           "match": "contains",
-          "triggers": ["bot", "ALO", "lo", "lô"],
+          "triggers": ["ALO", "lo", "lô"],
           "replies": [
             "Cái L gì cũng t ? {mention}",
             "Nói thế thì chịu rồi {mention}"
@@ -179,7 +176,7 @@
           ]
         },
         {
-          "match": "exact",
+          "match": "contains",
           "triggers": ["vali", "valo", "valorant"],
           "replies": [
             "Bắt được thằng nghiện {mention}",
@@ -224,15 +221,15 @@
           "match": "contains",
           "triggers": ["bai", "bye", "pai", "paii"],
           "replies": ["Ok {mention}", "👍", "Seen"]
-        }, 
-                        {
+        },
+        {
           "match": "contains",
           "triggers": ["dcm", "địt", "mẹ"],
           "replies": [
-              "Nói bậy ít thôi {mention}",
-              "Tưởng văng tục ra là ngầu à {mention}",
-              "T chụp lại rồi tí t gửi mẹ m {mention}",
-              "Láo ? {mention}"
+            "Nói bậy ít thôi {mention}",
+            "Tưởng văng tục ra là ngầu à {mention}",
+            "T chụp lại rồi tí t gửi mẹ m {mention}",
+            "Láo ? {mention}"
           ]
         }
       ]
