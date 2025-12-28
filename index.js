@@ -170,7 +170,6 @@ function wildcardToRegex(pattern, caseInsensitive) {
   const final = hasStar ? `^${escaped}$` : `^${escapeRegex(pattern)}$`;
   return new RegExp(final, caseInsensitive ? "i" : "");
 }
-console.log("[boot]", { pid: process.pid, user: client.user?.tag });
 
 function buildMatcher(rule) {
   const flags = rule.caseInsensitive ? "i" : "";
@@ -397,3 +396,4 @@ client.on("messageCreate", async (message) => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
+
