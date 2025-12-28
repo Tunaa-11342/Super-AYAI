@@ -1,3 +1,5 @@
+const os = require("os");
+console.log("[boot-start]", { pid: process.pid, host: os.hostname() });
 require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
@@ -294,6 +296,7 @@ const client = new Client({
 
 client.once("ready", () => {
   console.log(`Logged in as ${client.user.tag}`);
+  console.log("[boot-ready]", { pid: process.pid, host: os.hostname() });
   console.log("[boot]", { pid: process.pid, hostname: require("os").hostname() });
 });
 
@@ -366,6 +369,7 @@ client.on("messageCreate", async (message) => {
     });
 
     try {
+      console.log("[send_attempt]", { pid: process.pid, host: os.hostname(), mid: message.id });
       if (rule.action.mode === "send") {
         await message.channel.send({ content: text, allowedMentions });
       } else {
@@ -388,4 +392,5 @@ client.on("messageCreate", async (message) => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
+
 
