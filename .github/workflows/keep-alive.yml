@@ -1,0 +1,32 @@
+name: Keep Render Bot Alive
+
+on:
+  schedule:
+    # Chạy mỗi 10 phút (Render sleep sau 15 phút không dùng)
+    - cron: '*/10 * * * *'
+  
+  # Cho phép chạy thủ công từ GitHub UI
+  workflow_dispatch:
+
+jobs:
+  ping-render:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Ping Bot Health Endpoint
+        run: |
+          echo "🔔 Pinging bot at $(date)"
+          
+          # Ping health endpoint
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://super-ayai.onrender.com)
+          
+          if [ $response -eq 200 ]; then
+            echo "Bot is alive! Status code: $response"
+          else
+            echo "Bot returned status: $response"
+          fi
+          
+          # Ping main endpoint
+          curl -s https://your-bot-name.onrender.com > /dev/null
+          
+          echo "Ping completed successfully!"
