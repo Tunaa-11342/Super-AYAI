@@ -377,8 +377,9 @@ client.on("messageCreate", async (message) => {
       if (settings.logMatches) console.error("[send failed]", e.message);
     }
 
-    break;
+    return; 
   }
 });
 
 client.login(process.env.DISCORD_TOKEN);
+
