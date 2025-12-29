@@ -96,7 +96,7 @@
             "Nín nào cô pé chưa tài đâu {mention}"
           ]
         },
-                {
+        {
           "match": "contains",
           "triggers": ["bot gà"],
           "replies": [
@@ -240,14 +240,23 @@
             "Láo ? {mention}"
           ]
         },
-                {
+        {
           "match": "contains",
           "triggers": ["Tuấn ngu"],
           "replies": ["Tuấn không ngu, {mention} ngu 🤪"]
         },
         {
           "match": "contains",
-          "triggers": ["domixi", "bo pc", "mixi", "do mixi", "ộ i i", "con cho cao bang"],
+          "triggers": [
+            "domixi",
+            "bo pc",
+            "mixi",
+            "do mixi",
+            "ộ i i",
+            "con cho cao bang",
+            "độ",
+            "độ mixi"
+          ],
           "replies": [
             "Con cho cao bang bo pc 🐕💻",
             "Alo {mention} à, ờ anh chào {mention} nhé. Em là {mention} à {mention}, ơi dồi ôi em ơi chối làm sao được hả {mention}! Anh nói thật đấy, {mention} mà không nói chuyện nghiêm túc với anh là anh đăng hết thông tin của {mention} lên mạng đấy",
@@ -321,34 +330,37 @@
             "HDPE là ngon luôn, m ở thời kì khủng long về à {mention}"
           ]
         },
-                {
+        {
           "match": "contains",
           "triggers": ["How old are you"],
-          "replies": [
-            "Old enough to be ur mother {mention}"
-          ]
+          "replies": ["Old enough to be ur mother {mention}"]
         },
-                        {
+        {
           "match": "contains",
           "triggers": ["Cam mom", "cam mom", "câm", "cam"],
-          "replies": [
-            "Deo câm đấy làm gì nhau {mention}"
-          ]
+          "replies": ["Deo câm đấy làm gì nhau {mention}"]
         },
-                        {
+        {
           "match": "contains",
           "triggers": ["thang nao day", "ai day", "ai đây", "ai"],
-          "replies": [
-            "Con mm day {mention}",
-            "Thang cha m day {mention}"
-          ]
+          "replies": ["Con mm day {mention}", "Thang cha m day {mention}"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["3"],
+          "replies": ["6"]
+        },
+                {
+          "match": "contains",
+          "triggers": ["rauma", "rau má", "rau ma"],
+          "replies": ["Người thanh hóa tôi ăn gió ăn sương, mượn xe đi chợ 3 năm chưa về"]
+        },
+                {
+          "match": "contains",
+          "triggers": ["3"],
+          "replies": ["6"]
         }
       ]
     }
   ]
 }
-
-
-
-
-
