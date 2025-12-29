@@ -77,6 +77,8 @@
             "\\bcon\\s*cak\\b",
             "\\bcặc\\b",
             "\\bcon\\s*cặc\\b"
+            "cc"
+            "con cac"
           ],
           "replies": [
             "Mới nói có tí đã rút súng ra vậy {mention}",
@@ -331,5 +333,6 @@
     }
   ]
 }
+
 
 
