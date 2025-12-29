@@ -31,7 +31,7 @@
       "id": "quick_comebacks",
       "enabled": true,
       "caseInsensitive": true,
-      "cooldownMs": 600,
+      "coolwnMs": 600,
       "per": "user",
       "where": {},
       "action": {
@@ -57,7 +57,7 @@
             "Vãi được cả lon cũng hay {mention} 😌",
             "mày có L à {mention}",
             "Chill chill {mention}, bình tĩnh nào cô pé",
-            "🍊 down bờ rô {mention}"
+            "🍊 wn bờ rô {mention}"
           ]
         },
         {
@@ -66,7 +66,7 @@
           "replies": [
             "Ấy ấy nhẹ lời nha {mention}",
             "Ê đừng nóng {mention}, nói chuyện lịch sự tí",
-            "🍊 down bờ rô {mention} 😅",
+            "🍊 wn bờ rô {mention} 😅",
             "Nói bậy ít thôi {mention}"
           ]
         },
@@ -178,7 +178,7 @@
         },
         {
           "match": "contains",
-          "triggers": ["kiddo", "kid", "kíd", "con nít", "kit"],
+          "triggers": ["kid", "kid", "kíd", "con nít", "kit"],
           "replies": [
             "M lớn hơn ai mà sủa {mention} 😒",
             "Làm như mình lớn lắm ấy {mention}"
@@ -223,7 +223,7 @@
           "replies": [
             "Hi {mention}",
             "Hi con cack tao {mention}",
-            "Hi kiddo {mention}"
+            "Hi kid {mention}"
           ]
         },
         {
@@ -233,7 +233,7 @@
         },
         {
           "match": "contains",
-          "triggers": ["dcm", "địt", "mẹ", "clm"],
+          "triggers": ["dcm", "địt", "mẹ", "clm", "dit me", "ditme"],
           "replies": [
             "Nói bậy ít thôi {mention}",
             "Tưởng văng tục ra là ngầu à {mention}",
@@ -333,5 +333,6 @@
     }
   ]
 }
+
 
 
