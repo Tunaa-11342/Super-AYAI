@@ -209,7 +209,7 @@
           "replies": ["Nghiện vl {mention}"]
         },
         {
-          "match": "exact",
+          "match": "contains",
           "triggers": ["ae"],
           "replies": [
             "Deo ai ae với m {mention}",
@@ -347,6 +347,7 @@
     }
   ]
 }
+
 
 
 
