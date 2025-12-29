@@ -76,8 +76,8 @@
             "như\\s*cc",
             "\\bcon\\s*cak\\b",
             "\\bcặc\\b",
-            "\\bcon\\s*cặc\\b"
-            "cc"
+            "\\bcon\\s*cặc\\b",
+            "cc",
             "con cac"
           ],
           "replies": [
@@ -333,6 +333,5 @@
     }
   ]
 }
-
 
 
