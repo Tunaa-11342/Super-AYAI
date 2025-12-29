@@ -84,6 +84,7 @@ function loadRulesFile() {
       ignoreBots: settings.ignoreBots !== false,
       ignoreDMs: settings.ignoreDMs !== false,
       ignorePrefixes: arrStr(settings.ignorePrefixes),
+      ignoreUrls: settings.ignoreUrls !== false, // Thêm option này
       defaultCooldownMs: Number.isFinite(settings.defaultCooldownMs)
         ? settings.defaultCooldownMs
         : 3000,
@@ -341,6 +342,10 @@ client.on("messageCreate", async (message) => {
     // Check ignored prefixes
     if (settings.ignorePrefixes.some((p) => contentRaw.startsWith(p))) return;
 
+    // Skip messages with URLs if enabled
+    const urlRegex = /(https?:\/\/[^\s]+)/gi;
+    if (settings.ignoreUrls && urlRegex.test(contentRaw)) return;
+
     const content = clampString(contentRaw, settings.maxMessageLength);
     const wc = wordCount(content);
 
@@ -442,6 +447,19 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, () => {
   console.log(`[HTTP] Server listening on port ${PORT}`);
+  
+  // Self-ping every 14 minutes to prevent sleep (only on Render)
+  if (process.env.RENDER) {
+    const selfPingUrl = process.env.RENDER_EXTERNAL_URL || `http://localhost:${PORT}`;
+    setInterval(() => {
+      http.get(selfPingUrl, (res) => {
+        console.log(`[SELF-PING] Status: ${res.statusCode}`);
+      }).on('error', (err) => {
+        console.error('[SELF-PING ERROR]', err.message);
+      });
+    }, 14 * 60 * 1000); // 14 minutes
+    console.log('[SELF-PING] Enabled - will ping every 14 minutes');
+  }
 });
 
 // Login with timeout
