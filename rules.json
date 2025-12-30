@@ -139,13 +139,11 @@
           ]
         },
         {
-          "match": "contains",
-          "triggers": ["ALO", "lo", "lô"],
-          "replies": [
-            "Cái L gì cũng t ? {mention}",
-            "Nói thế thì chịu rồi {mention}"
-          ]
+          "match": "regex",
+          "triggers": ["\\balo\\b", "\\blo\\b", "\\blô\\b"],
+          "replies": ["Cái L gì {mention}?", "Concak gì {mention}"]
         },
+
         {
           "match": "contains",
           "triggers": ["ga'"],
@@ -347,16 +345,13 @@
         },
         {
           "match": "contains",
-          "triggers": ["3"],
-          "replies": ["6"]
-        },
-                {
-          "match": "contains",
           "triggers": ["rauma", "rau má", "rau ma"],
-          "replies": ["Người thanh hóa tôi ăn gió ăn sương, mượn xe đi chợ 3 năm chưa về"]
+          "replies": [
+            "Người thanh hóa tôi ăn gió ăn sương, mượn xe đi chợ 3 năm chưa về"
+          ]
         },
-                {
-          "match": "contains",
+        {
+          "match": "exact",
           "triggers": ["3"],
           "replies": ["6"]
         }
