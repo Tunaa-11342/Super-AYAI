@@ -31,7 +31,7 @@
       "id": "quick_comebacks",
       "enabled": true,
       "caseInsensitive": true,
-      "coolwnMs": 600,
+      "cooldownMs": 600,
       "per": "user",
       "where": {},
       "action": {
@@ -55,7 +55,7 @@
           "triggers": ["vcl", "vl", "vãi", "vai"],
           "replies": [
             "Vãi được cả lon cũng hay {mention} 😌",
-            "mày có L à {mention}",
+            "mày có L là {mention}",
             "Chill chill {mention}, bình tĩnh nào cô pé",
             "🍊 down bờ rô {mention}"
           ]
@@ -77,8 +77,8 @@
             "\\bcon\\s*cak\\b",
             "\\bcặc\\b",
             "\\bcon\\s*cặc\\b",
-            "cc",
-            "con cac"
+            "\\bcc\\b",
+            "\\bcon\\s*cac\\b"
           ],
           "replies": [
             "Mới nói có tí đã rút súng ra vậy {mention}",
@@ -113,16 +113,18 @@
         },
         {
           "match": "regex",
-          "triggers": ["\\balo\\b", "\\blô\\b"],
+          "triggers": ["\\balo\\b", "\\blô\\b", "\\blo\\b"],
           "replies": [
             "Lô con cặc tao này {mention}",
             "Lô cái đầu buồi {mention}",
-            "Lô cái bìu"
+            "Lô cái bìu",
+            "Cái L gì {mention}?",
+            "Concak gì {mention}"
           ]
         },
         {
-          "match": "contains",
-          "triggers": ["sv", "SV", "súc vật"],
+          "match": "regex",
+          "triggers": ["\\bsv\\b", "\\bSV\\b", "súc\\s*vật"],
           "replies": [
             "Nhìn lại bản thân mình coi {mention}",
             "Chắc gì m đã hơn sv {mention}",
@@ -139,12 +141,6 @@
           ]
         },
         {
-          "match": "regex",
-          "triggers": ["\\balo\\b", "\\blo\\b", "\\blô\\b"],
-          "replies": ["Cái L gì {mention}?", "Concak gì {mention}"]
-        },
-
-        {
           "match": "contains",
           "triggers": ["ga'"],
           "replies": [
@@ -157,8 +153,8 @@
           "replies": ["🗣️🤌 {mention}"]
         },
         {
-          "match": "contains",
-          "triggers": ["He", "he", "hehe"],
+          "match": "regex",
+          "triggers": ["\\bhe\\b", "\\bhehe\\b"],
           "replies": ["He ?", "He cc {mention}"]
         },
         {
@@ -174,8 +170,8 @@
           "replies": ["Chưa tài đâu khi nào vô địch thì tính tiếp nhé"]
         },
         {
-          "match": "contains",
-          "triggers": ["kiddo", "kid", "kíd", "con nít", "kit"],
+          "match": "regex",
+          "triggers": ["\\bkiddo\\b", "\\bkid\\b", "\\bkíd\\b", "con\\s*nít", "\\bkit\\b"],
           "replies": [
             "M lớn hơn ai mà sủa {mention} 😒",
             "Làm như mình lớn lắm ấy {mention}"
@@ -207,16 +203,16 @@
           "replies": ["Nghiện vl {mention}"]
         },
         {
-          "match": "contains",
-          "triggers": ["ae"],
+          "match": "regex",
+          "triggers": ["\\bae\\b"],
           "replies": [
             "Deo ai ae với m {mention}",
             "ae con cak tình nghĩa xaoloz {mention}"
           ]
         },
         {
-          "match": "contains",
-          "triggers": ["hj chat", "hj", "hi"],
+          "match": "regex",
+          "triggers": ["\\bhj\\s*chat\\b", "\\bhj\\b", "\\bhi\\b"],
           "replies": [
             "Hi {mention}",
             "Hi con cack tao {mention}",
@@ -229,8 +225,8 @@
           "replies": ["Ok {mention}", "👍", "Seen"]
         },
         {
-          "match": "contains",
-          "triggers": ["dcm", "địt", "mẹ", "clm", "dit me", "ditme"],
+          "match": "regex",
+          "triggers": ["\\bdcm\\b", "địt", "\\bmẹ\\b", "\\bclm\\b", "dit\\s*me", "ditme"],
           "replies": [
             "Nói bậy ít thôi {mention}",
             "Tưởng văng tục ra là ngầu à {mention}",
@@ -252,7 +248,6 @@
             "do mixi",
             "ộ i i",
             "con cho cao bang",
-            "độ",
             "độ mixi"
           ],
           "replies": [
@@ -282,13 +277,13 @@
           "replies": ["gigi cái đb {mention}"]
         },
         {
-          "match": "contains",
-          "triggers": ["gg"],
+          "match": "regex",
+          "triggers": ["\\bgg\\b"],
           "replies": ["Deo gg đấy làm sao {mention}"]
         },
         {
-          "match": "contains",
-          "triggers": ["Sóc lọ", "sục", "lọ"],
+          "match": "regex",
+          "triggers": ["sóc\\s*lọ", "sục", "\\blọ\\b"],
           "replies": [
             "Bắt sóc bỏ lọ nữa hả {mention}",
             "Hại sức khỏe lắm {mention}",
@@ -298,17 +293,17 @@
         },
         {
           "match": "contains",
-          "triggers": ["wibi, wibu"],
+          "triggers": ["wibi", "wibu"],
           "replies": ["🎵 Và hãy luôn tự hào vì bạn là... Một..Thằng..Wibu🎵"]
         },
         {
           "match": "contains",
-          "triggers": ["Gensin", "Gensin"],
+          "triggers": ["Gensin", "Genshin"],
           "replies": ["Sao cứ nhắc tới cái game đáy xã hội thế {mention}"]
         },
         {
-          "match": "contains",
-          "triggers": ["con trai"],
+          "match": "regex",
+          "triggers": ["con\\s*trai"],
           "replies": [
             "Làm con trai không khó, làm con trai gốc mới khó {mention}"
           ]
@@ -334,18 +329,18 @@
           "replies": ["Old enough to be ur mother {mention}"]
         },
         {
-          "match": "contains",
-          "triggers": ["Cam mom", "cam mom", "câm", "cam"],
+          "match": "regex",
+          "triggers": ["cam\\s*mom", "câm", "\\bcam\\b"],
           "replies": ["Deo câm đấy làm gì nhau {mention}"]
         },
         {
-          "match": "contains",
-          "triggers": ["thang nao day", "ai day", "ai đây", "ai"],
+          "match": "regex",
+          "triggers": ["thang\\s*nao\\s*day", "ai\\s*day", "ai\\s*đây", "\\bai\\b"],
           "replies": ["Con mm day {mention}", "Thang cha m day {mention}"]
         },
         {
-          "match": "contains",
-          "triggers": ["rauma", "rau má", "rau ma"],
+          "match": "regex",
+          "triggers": ["rauma", "rau\\s*má", "rau\\s*ma"],
           "replies": [
             "Người thanh hóa tôi ăn gió ăn sương, mượn xe đi chợ 3 năm chưa về"
           ]
