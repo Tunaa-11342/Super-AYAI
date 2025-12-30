@@ -171,7 +171,13 @@
         },
         {
           "match": "regex",
-          "triggers": ["\\bkiddo\\b", "\\bkid\\b", "\\bkíd\\b", "con\\s*nít", "\\bkit\\b"],
+          "triggers": [
+            "\\bkiddo\\b",
+            "\\bkid\\b",
+            "\\bkíd\\b",
+            "con\\s*nít",
+            "\\bkit\\b"
+          ],
           "replies": [
             "M lớn hơn ai mà sủa {mention} 😒",
             "Làm như mình lớn lắm ấy {mention}"
@@ -226,7 +232,14 @@
         },
         {
           "match": "regex",
-          "triggers": ["\\bdcm\\b", "địt", "\\bmẹ\\b", "\\bclm\\b", "dit\\s*me", "ditme"],
+          "triggers": [
+            "\\bdcm\\b",
+            "địt",
+            "\\bmẹ\\b",
+            "\\bclm\\b",
+            "dit\\s*me",
+            "ditme"
+          ],
           "replies": [
             "Nói bậy ít thôi {mention}",
             "Tưởng văng tục ra là ngầu à {mention}",
@@ -248,7 +261,8 @@
             "do mixi",
             "ộ i i",
             "con cho cao bang",
-            "độ mixi"
+            "độ mixi",
+            "độ cao bằng"
           ],
           "replies": [
             "Con cho cao bang bo pc 🐕💻",
@@ -335,7 +349,12 @@
         },
         {
           "match": "regex",
-          "triggers": ["thang\\s*nao\\s*day", "ai\\s*day", "ai\\s*đây", "\\bai\\b"],
+          "triggers": [
+            "thang\\s*nao\\s*day",
+            "ai\\s*day",
+            "ai\\s*đây",
+            "\\bai\\b"
+          ],
           "replies": ["Con mm day {mention}", "Thang cha m day {mention}"]
         },
         {
@@ -349,6 +368,13 @@
           "match": "exact",
           "triggers": ["3"],
           "replies": ["6"]
+        },
+        {
+          "match": "contains",
+          "triggers": ["Khô gà đè tem"],
+          "replies": [
+            "Alo {mention} à, ờ anh chào {mention} nhé. Em là {mention} à {mention}, ơi dồi ôi em ơi chối làm sao được hả {mention}! Anh nói thật đấy, {mention} mà không nói chuyện nghiêm túc với anh là anh đăng hết thông tin của {mention} lên mạng đấy"
+          ]
         }
       ]
     }
